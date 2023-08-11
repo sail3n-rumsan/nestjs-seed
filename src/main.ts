@@ -9,14 +9,14 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const logger = new Logger('nest js');
-  const port = process.env.PORT || 4000;
+  const port = process.env.PORT || 3000;
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({ logger: true }),
   );
   app.enableCors();
   const options = new DocumentBuilder()
-    .setTitle('NestJS Todo App')
+    .setTitle('NestJS Seed App')
     .setDescription('The Realworld API description')
     .setVersion('1.0.0')
     .addBearerAuth(
